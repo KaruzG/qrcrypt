@@ -14,8 +14,10 @@
   "scripts": {
     "dev": "tsup src/index.ts --watch",
     "build": "tsup src/index.ts --dts --format esm,cjs",
-    "test": "vitest",
-    "release": "semantic-release"
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run",
+    "check": "npm run lint && npm run build && npm run test",
+    "release": "npm run check && semantic-release"
   },
   "repository": {
     "type": "git",
@@ -44,6 +46,9 @@
     "@semantic-release/npm": "^11.0.3",
     "@semantic-release/release-notes-generator": "^12.1.0",
     "@types/node": "^22.15.3",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
     "semantic-release": "^22.0.12",
     "vitest": "^3.1.2"
   }

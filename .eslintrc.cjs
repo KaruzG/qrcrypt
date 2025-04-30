@@ -17,6 +17,6 @@ module.exports = {
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-floating-promises': 'error'
     },
-    ignorePatterns: ['dist/', 'node_modules/']
+    ignorePatterns: ['dist/', 'node_modules/', 'release.config.cjs'],
   };
   

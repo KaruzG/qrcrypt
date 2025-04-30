@@ -1,0 +1,50 @@
+{
+  "name": "qrcrypt",
+  "version": "0.1.0",
+  "description": "Generate QRs with encrypted data",
+  "main": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "tsup src/index.ts --watch",
+    "build": "tsup src/index.ts --dts --format esm,cjs",
+    "test": "vitest",
+    "release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaruzG/qrcrypt.git"
+  },
+  "keywords": [
+    "qr"
+  ],
+  "author": "KaruzG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KaruzG/qrcrypt/issues"
+  },
+  "homepage": "https://github.com/KaruzG/qrcrypt#readme",
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "qrcode": "^1.5.4",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^11.0.3",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "@types/node": "^22.15.3",
+    "semantic-release": "^22.0.12",
+    "vitest": "^3.1.2"
+  }
+}

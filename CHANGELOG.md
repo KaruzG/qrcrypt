@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/KaruzG/qrcrypt/compare/v1.0.0...v1.1.0) (2025-05-02)
+
+
+### Features
+
+* **qrcode:** Svg QR generation and test ([a198022](https://github.com/KaruzG/qrcrypt/commit/a1980227fd0e49525e3d7b3581897a1493a8811e))
+
 # 1.0.0 (2025-04-30)
 
 

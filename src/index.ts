@@ -1,8 +1,3 @@
-interface TestParams {
-    a: number;
-    b: number;
-}
+import { toQR } from "./toQR";
 
-export function test(params: TestParams): number {
-    return params.a + params.b;
-}
+export { toQR };

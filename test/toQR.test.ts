@@ -1,7 +1,6 @@
 import { expect, test } from 'vitest';
-
-// Test toQR type SVG
 import { toQR } from '../src/toQR';
+
 test('toQR - type SVG', async () => {
   const QR = await toQR({ encrypt: false, returnType: 'svg', data: 'test' });
   const NORMALIZED_QR = QR.replace(/\s+/g, '')

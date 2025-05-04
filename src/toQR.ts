@@ -10,15 +10,19 @@ export async function toQR(params: toQRparams): Promise<string> {
   const { encrypt, returnType, data } = params;
 
   if (returnType === 'svg') {
-    try {
       const result = await QRCode.toString(data, { type: 'svg' });
       return result;
-    } catch (error) {
-      console.error('Error generating QR code:', error);
-      throw error;
-    }
   }
 
-  console.error('Unsupported returnType or functionality not implemented');
+  if (returnType === 'image') {
+      const result = await QRCode.toDataURL(data);
+      return result;
+  }
+
+  if (returnType === 'text') {
+      const result = await QRCode.toString(data, { type: 'utf8' });
+      return result;
+  }
+
   throw new Error('Unsupported returnType or functionality not implemented');
 }

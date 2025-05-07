@@ -1,4 +1,6 @@
 import {toBase64, generateKey} from "./utils/utils"
+import crypto from 'uncrypto'
+
 
 type encryptParams = {
     data: string,

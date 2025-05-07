@@ -1,3 +1,6 @@
+import { subtle } from "uncrypto";
+
+
 export function toBase64(buffer: ArrayBuffer): string {
     return Buffer.from(buffer).toString("base64");
 }
@@ -14,7 +17,7 @@ export type generateKeyParams = {
 export async function generateKey(params:generateKeyParams):Promise<CryptoKey> {
   const {password, salt} = params
   const enc = new TextEncoder();
-  const keyMaterial = await crypto.subtle.importKey(
+  const keyMaterial = await subtle.importKey(
     "raw",
     enc.encode(password),
     "PBKDF2",
@@ -22,7 +25,7 @@ export async function generateKey(params:generateKeyParams):Promise<CryptoKey> {
     ["deriveKey"]
   );
 
-  const key = await crypto.subtle.deriveKey(
+  const key = await subtle.deriveKey(
     {
       name: "PBKDF2",
       salt,

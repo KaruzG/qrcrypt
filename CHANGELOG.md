@@ -1,3 +1,19 @@
+# [1.2.0](https://github.com/KaruzG/qrcrypt/compare/v1.1.0...v1.2.0) (2025-05-07)
+
+
+### Bug Fixes
+
+* **crypto:** Fixed compatibility in node and browser with native crypto function ([cec093c](https://github.com/KaruzG/qrcrypt/commit/cec093c077bf3e15236e75451c97656cf967667a))
+* **crypto:** Fixed compatibility in node and browser with native crypto function ([f117be2](https://github.com/KaruzG/qrcrypt/commit/f117be23c38e3903a443dd8f577ebf06841c93b1))
+
+
+### Features
+
+* add utility functions for base64 encoding and key generation ([5ed3d64](https://github.com/KaruzG/qrcrypt/commit/5ed3d64aeb90d17a79d8f6335331f2663ad4e155))
+* **decrypt:** add decrypt function for data decryption ([01c667c](https://github.com/KaruzG/qrcrypt/commit/01c667cea4d23c810b35d2cbbeb1027bb263c58d))
+* **encrypt:** implement encrypt function for data encryption ([152a7a7](https://github.com/KaruzG/qrcrypt/commit/152a7a72c726671869330dff87803f53e8a18190))
+* **qrcode:** Added image and text return types ([b107b7b](https://github.com/KaruzG/qrcrypt/commit/b107b7be609ea4c18c2010f03ddd30b809944241))
+
 # [1.1.0](https://github.com/KaruzG/qrcrypt/compare/v1.0.0...v1.1.0) (2025-05-02)
 
 

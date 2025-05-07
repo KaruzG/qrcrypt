@@ -1,5 +1,9 @@
 module.exports = {
     root: true,
+    env: {
+      browser: true,
+      node: true,
+    },
     parser: '@typescript-eslint/parser',
     parserOptions: {
       ecmaVersion: 'latest',
@@ -17,6 +21,6 @@ module.exports = {
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-floating-promises': 'error'
     },
-    ignorePatterns: ['dist/', 'node_modules/', 'release.config.cjs'],
+    ignorePatterns: ['dist/', 'node_modules/', 'release.config.cjs', 'tsup.config.ts'],
   };
   

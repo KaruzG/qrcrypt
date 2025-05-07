@@ -1,4 +1,6 @@
 import { fromBase64, generateKey } from "./utils/utils";
+import { subtle } from "uncrypto";
+
 
 export type DecryptParams = {
     encryptedData: string;
@@ -18,7 +20,7 @@ export async function decrypt({
     const encryptedBytes = fromBase64(encryptedData);
     const key = await generateKey({password: password, salt:saltBytes});
   
-    const decryptedBuffer = await crypto.subtle.decrypt(
+    const decryptedBuffer = await subtle.decrypt(
       { name: "AES-GCM", iv },
       key,
       encryptedBytes

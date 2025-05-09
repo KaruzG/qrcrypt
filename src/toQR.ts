@@ -13,7 +13,7 @@ export async function toQR(params: toQRparams): Promise<string> {
 
   if(password) {
     const encryptedData = await encrypt({data: data, password: password})
-    qrData = encryptedData.salt + encryptedData.initializationVector + encryptedData.encryptedData
+    qrData = `{salt}:"${encryptedData.salt}",{iv}:"${encryptedData.initializationVector}",{data}:"${encryptedData.encryptedData}"`
   }
 
   if (returnType === 'svg') {

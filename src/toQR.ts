@@ -1,11 +1,9 @@
 import QRCode from 'qrcode';
 import { encrypt } from './encrypt';
 
-type toQRparams = {
-  password?: string | false;
-  returnType: 'image' | 'text' | 'svg';
-  data: string;
-};
+type toQRparams = 
+  | { password: string, encryptedFormat: 'json' | 'web', returnType: 'image' | 'text' | 'svg', data: string }
+  | { password?: false, returnType: 'image' | 'text' | 'svg'; data: string };
 
 export async function toQR(params: toQRparams): Promise<string> {
   const { password = false, returnType, data} = params;

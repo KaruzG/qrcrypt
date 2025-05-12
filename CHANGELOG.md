@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/KaruzG/qrcrypt/compare/v1.2.0...v1.3.0) (2025-05-12)
+
+
+### Bug Fixes
+
+* **toQR:** format encrypted data structure ([d067da7](https://github.com/KaruzG/qrcrypt/commit/d067da7f8d1a2b70d626800fe1da54f537b439a1))
+
+
+### Features
+
+* **toQR:** Added json encrypted format for the data inside the QR ([adf9ded](https://github.com/KaruzG/qrcrypt/commit/adf9dedcb17874291aa15960b2a2ca8f888e4407))
+* **toQR:** enhance toQRparams to support optional authWebURL ([45d2d8a](https://github.com/KaruzG/qrcrypt/commit/45d2d8a6b59e5e0c851bbde1f38dc75339fa4520))
+* **toQR:** toQR now is able to enrypt the data before generating the QR ([dd0cc75](https://github.com/KaruzG/qrcrypt/commit/dd0cc751eb80a3d2b13c1ec6c6203f056825a3e0))
+
 # [1.2.0](https://github.com/KaruzG/qrcrypt/compare/v1.1.0...v1.2.0) (2025-05-07)
 
 

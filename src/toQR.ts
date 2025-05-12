@@ -2,16 +2,21 @@ import QRCode from 'qrcode';
 import { encrypt } from './encrypt';
 
 type toQRparams = 
-  | { password: string, encryptedFormat: 'json' | 'web', returnType: 'image' | 'text' | 'svg', data: string }
-  | { password?: false, returnType: 'image' | 'text' | 'svg'; data: string };
+  | { password: string, encryptedFormat?: 'json' | 'web', authWebURL?: string, returnType: 'image' | 'text' | 'svg', data: string }
+  | { password?: false, encryptedFormat?: undefined, authWebURL?: undefined, returnType: 'image' | 'text' | 'svg', data: string };
 
 export async function toQR(params: toQRparams): Promise<string> {
-  const { password = false, returnType, data} = params;
+  const { password = false, encryptedFormat = 'web', authWebURL = 'https://qrcrypt.vercel.app/authqr',returnType, data} = params;
   let qrData = data
 
   if(password) {
     const encryptedData = await encrypt({data: data, password: password})
-    qrData = `{salt}:"${encryptedData.salt}",{iv}:"${encryptedData.initializationVector}",{data}:"${encryptedData.encryptedData}"`
+    if(encryptedFormat === 'json') {
+      qrData = `{salt}:"${encryptedData.salt}",{iv}:"${encryptedData.initializationVector}",{data}:"${encryptedData.encryptedData}"`
+    } else
+    if (encryptedFormat === 'web') {
+      qrData = `${authWebURL}?salt=${encryptedData.salt}&iv=${encryptedData.initializationVector}&data=${encryptedData.encryptedData}"`
+    }
   }
 
   if (returnType === 'svg') {

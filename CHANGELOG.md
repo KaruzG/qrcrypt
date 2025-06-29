@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/KaruzG/qrcrypt/compare/v1.3.0...v1.3.1) (2025-06-29)
+
+
+### Bug Fixes
+
+* **toQR:** Changed URL of default authWeb ([c6b230c](https://github.com/KaruzG/qrcrypt/commit/c6b230c8eaa0aade7cf4726b8154ebb19adc2a7e))
+
 # [1.3.0](https://github.com/KaruzG/qrcrypt/compare/v1.2.0...v1.3.0) (2025-05-12)
 
 

@@ -6,7 +6,7 @@ type toQRparams =
   | { password?: false, encryptedFormat?: undefined, authWebURL?: undefined, returnType: 'image' | 'text' | 'svg', data: string };
 
 export async function toQR(params: toQRparams): Promise<string> {
-  const { password = false, encryptedFormat = 'web', authWebURL = 'https://qrcrypt.vercel.app/authqr',returnType, data} = params;
+  const { password = false, encryptedFormat = 'web', authWebURL = 'https://qrcryptweb.vercel.app/authqr',returnType, data} = params;
   let qrData = data
 
   if(password) {

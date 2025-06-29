@@ -1,8 +1,6 @@
 import {toBase64, generateKey} from "./utils/utils"
 import { subtle, getRandomValues } from "uncrypto";
 
-
-
 type encryptParams = {
     data: string,
     password: string,

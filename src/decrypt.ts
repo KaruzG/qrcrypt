@@ -1,7 +1,6 @@
 import { fromBase64, generateKey } from "./utils/utils";
 import { subtle } from "uncrypto";
 
-
 export type DecryptParams = {
     encryptedData: string;
     password: string;
